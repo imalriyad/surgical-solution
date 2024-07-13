@@ -6,11 +6,15 @@ import {
 } from "react-router-dom";
 import router from './router/Router.jsx';
 import MainLayout from './layout/MainLayout.jsx';
+import AuthProvider from './context/AuthProvider.jsx';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <MainLayout></MainLayout>
+   <AuthProvider>
+   <RouterProvider router={router}>
+     <MainLayout></MainLayout>
    </RouterProvider>
+   </AuthProvider>
   </React.StrictMode>,
 )

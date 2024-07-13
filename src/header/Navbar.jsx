@@ -3,11 +3,13 @@ import { TiShoppingCart } from "react-icons/ti";
 import { CgProfile } from "react-icons/cg";
 import { IoMenu, IoClose } from "react-icons/io5";
 import logo from "../assets/Surgical Solution logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenSearchBox, setIsOpenSearchBox] = useState(false);
+  const {isOpenMenu, setIsOpenMenu} = useContext(AuthContext);
+  
 
   return (
     <>
