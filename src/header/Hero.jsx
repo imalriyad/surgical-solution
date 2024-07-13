@@ -1,9 +1,14 @@
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 
 const Hero = () => {
+    const {isOpenMenu} = useContext(AuthContext);
+
     return (
-        <div>
-            <div className="carousel w-full">
+        <>
+           <div className={isOpenMenu?'hidden lg:block':'block'}>
+           <div className="carousel w-full">
   <div id="item1" className="carousel-item w-full">
     <img
       src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
@@ -31,7 +36,8 @@ const Hero = () => {
   <a href="#item3" className="btn btn-xs">3</a>
   <a href="#item4" className="btn btn-xs">4</a>
 </div>
-        </div>
+           </div>
+        </>
     );
 };
 
